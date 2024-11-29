@@ -1,0 +1,11 @@
+<section>
+    <h6> {{piloto.nombre}} </h6>
+    <p> {{piloto.escuderiaDebut}} </p>
+    @if(piloto.escuderiaActual){
+    <p>{{piloto.escuderiaActual}}</p>
+    }
+    <p> {{piloto.debut}} </p>
+    <p> {{piloto.cantPremios}} </p>
+    <p> {{piloto.cantPodios}} </p>
+    <button [routerLink]="['/piloto-edit',piloto.id]">Editar piloto</button>
+</section>

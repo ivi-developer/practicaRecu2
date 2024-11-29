@@ -1,0 +1,14 @@
+{
+  "pilotos": [
+    {
+      "id": "0402",
+      "nombre": "Sena",
+      "escuderiaDebut": "nose",
+      "escuderiaActual": "Ford",
+      "debut": 2000,
+      "cantPremios": 5,
+      "cantPodios": 9,
+      "activo": true
+    }
+  ]
+}

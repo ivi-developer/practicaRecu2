@@ -1,0 +1,66 @@
+<form [formGroup]="form">
+    <fieldset>
+
+        <legend>Ingrese la info del piloto</legend>
+
+
+        <label for="piloto-nombre-update">Nombre</label>
+        <input type="text" formControlName="nombre" id="piloto-nombre-update">
+        @if(form.controls['nombre'].getError('required')&& form.controls['nombre'].touched){
+        <app-campo-requerido />
+        }
+
+
+        <label for="piloto-escuderia-debut-update">escuderia debut</label>
+        <input type="text" formControlName="escuderiaDebut" id="piloto-escuderia-debut-update">
+        @if(form.controls['escuderiaDebut'].getError('required')&& form.controls['escuderiaDebut'].touched){
+        <app-campo-requerido />
+        }
+
+
+        <label for="piloto-escuderia-actual-update">escuderia actual</label>
+        <select name="" formControlName="escuderiaActual" id="piloto-escuderia-actual-update">
+            <option value="" disabled selected>Eliga una opcion</option>
+            <option value="Mercedes Benz">Mercedes Benz</option>
+            <option value="Ford">Ford</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="">Ya se retiro</option>
+        </select>
+
+        <label for="piloto-debut-update"> Anio debut </label>
+        <input type="number" formControlName="debut" id="piloto-debut-update">
+        @if(form.controls['debut'].getError('required')&& form.controls['debut'].touched){
+        <app-campo-requerido />
+        }
+        @if((form.controls['debut'].getError('min')||form.controls['debut'].getError('max'))&&
+        form.controls['debut'].touched ){
+        <app-valor-invalido />
+        }
+
+
+        <label for="piloto-cant-premios-update">premios ganados</label>
+        <input type="number" formControlName="cantPremios" id="piloto-cant-premios-update">
+        @if(form.controls['cantPremios'].getError('required')&& form.controls['cantPremios'].touched){
+        <app-campo-requerido />
+        }
+        @if(form.controls['cantPremios'].getError('min')&& form.controls['cantPremios'].touched){
+        <app-valor-invalido />
+        }
+
+
+        <label for="piloto-cant-podios-update">podios logrados</label>
+        <input type="number" formControlName="cantPodios" id="piloto-cant-podios-update">
+        @if(form.controls['cantPodios'].getError('required') && form.controls['cantPodios'].touched){
+        <app-campo-requerido />
+        }
+        @if(form.controls['cantPodios'].getError('min')&& form.controls['cantPodios'].touched){
+        <app-valor-invalido />
+        }
+
+
+        <label for="piloto-activo">se encuentra activo</label>
+        <input type="checkbox" formControlName="activo-update" id="piloto-activo-update">
+
+        <button (click)="updatePiloto()" routerLink="/piloto-list">Enviar</button>
+    </fieldset>
+</form>

@@ -1,0 +1,9 @@
+<section>
+    <ul>
+        @for(piloto of pilotos; track $index){
+        <app-piloto-card [piloto]=piloto />
+        <button (click)="deletePiloto(piloto.id)">Eliminar</button>
+        <button [routerLink]="['/piloto-details', piloto.id]"> Detalles</button>
+        }
+    </ul>
+</section>

@@ -1,0 +1,9 @@
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(145, 145, 243);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
